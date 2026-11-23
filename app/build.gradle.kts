@@ -5,9 +5,19 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+val signingKeystore = System.getenv("JEE_GEM_KEYSTORE")
+val signingStorePassword = System.getenv("JEE_GEM_STORE_PASSWORD")
+val signingKeyAlias = System.getenv("JEE_GEM_KEY_ALIAS")
+val signingKeyPassword = System.getenv("JEE_GEM_KEY_PASSWORD")
+val hasPermanentSigning = signingKeystore != null &&
+    file(signingKeystore).exists() &&
+    signingStorePassword != null &&
+    signingKeyAlias != null
+
 android {
     namespace = "app.jeegem"
     compileSdk = 35
+    buildToolsVersion = "35.0.0"
 
     defaultConfig {
         applicationId = "app.jeegem"
@@ -17,14 +27,25 @@ android {
         versionName = "0.1.0"
     }
 
+    signingConfigs {
+        if (hasPermanentSigning) {
+            create("gem") {
+                storeFile = file(signingKeystore!!)
+                storePassword = signingStorePassword
+                keyAlias = signingKeyAlias
+                keyPassword = signingKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = ""
+            signingConfig = signingConfigs.getByName(if (hasPermanentSigning) "gem" else "debug")
         }
         release {
             isMinifyEnabled = false
-            // Temporary: M4 replaces this with a real keystore from CI secrets.
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.getByName(if (hasPermanentSigning) "gem" else "debug")
         }
     }
 

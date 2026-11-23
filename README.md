@@ -42,6 +42,19 @@ Local build (Linux/macOS with JDK 17 + Android SDK):
 ./gradlew :app:assembleDebug
 ```
 
+### Signing
+
+Every build is signed with one permanent keystore so APKs install as updates over each other. The keystore lives in Actions secrets, never in the repo:
+
+| Secret | Meaning |
+|---|---|
+| `JEE_GEM_KEYSTORE_BASE64` | base64 of the `.jks` file |
+| `JEE_GEM_STORE_PASSWORD` | keystore password |
+| `JEE_GEM_KEY_ALIAS` | key alias |
+| `JEE_GEM_KEY_PASSWORD` | key password |
+
+Without those secrets the build falls back to the throwaway debug key.
+
 ## Roadmap notes
 
 - Planner picks 3–5 daily targets from lowest-coverage chapters plus revisions that are due.
