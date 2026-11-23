@@ -1,5 +1,7 @@
 package app.jeegem.domain
 
+import app.jeegem.data.Chapter
+import app.jeegem.data.ChapterStatus
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -10,12 +12,24 @@ class PlannerTest {
 
     private val day = LocalDate.of(2026, 11, 23)
 
+    private fun chapter(id: String, subjectId: String, priority: String = "high") =
+        Chapter(
+            id = id,
+            subjectId = subjectId,
+            subjectName = subjectId,
+            subjectTint = "#4C8DFF",
+            unitId = "$subjectId-unit",
+            unitName = "Unit",
+            name = "Chapter $id",
+            priority = priority,
+        )
+
     private val chapters = listOf(
-        Chapter("p1", "physics", "mech", "Kinematics"),
-        Chapter("p2", "physics", "mech", "Laws of Motion"),
-        Chapter("c1", "chemistry", "physical", "Mole Concept"),
-        Chapter("m1", "maths", "algebra", "Quadratic Equations"),
-        Chapter("m2", "maths", "algebra", "Complex Numbers"),
+        chapter("p1", "physics"),
+        chapter("p2", "physics"),
+        chapter("c1", "chemistry"),
+        chapter("m1", "maths"),
+        chapter("m2", "maths"),
     )
 
     @Test
@@ -38,7 +52,7 @@ class PlannerTest {
 
         assertEquals(TargetReason.REVIEW, plan.first().reason)
         assertEquals("c1", plan.first().chapterId)
-        assertTrue(plan.none { it.chapterId == "c1" && it.reason != TargetReason.REVIEW })
+        assertTrue(plan.none { it.chapterId == "m1" && it.reason == TargetReason.REVIEW })
     }
 
     @Test
@@ -53,6 +67,18 @@ class PlannerTest {
         val firstNew = plan.first { it.reason == TargetReason.NEW }
 
         assertEquals("c1", firstNew.chapterId)
+    }
+
+    @Test
+    fun `high priority chapters come before low priority in the same subject`() {
+        val subjectChapters = listOf(
+            chapter("maths-low", "maths", "low"),
+            chapter("maths-high", "maths", "high"),
+        )
+
+        val plan = Planner.plan(day, subjectChapters, emptyMap(), emptyList(), minutesBudget = 600)
+
+        assertEquals("maths-high", plan.first().chapterId)
     }
 
     @Test
@@ -82,5 +108,18 @@ class PlannerTest {
         val plan = Planner.plan(day, chapters, progress, reviews, minutesBudget = 600)
 
         assertEquals(plan.size, plan.map { it.chapterId }.toSet().size)
+    }
+
+    @Test
+    fun `upcoming reviews follow the stored stage and skip mastered chapters`() {
+        val progress = mapOf(
+            "p1" to ChapterProgress("p1", ChapterStatus.LEARNING, day, 0),
+            "p2" to ChapterProgress("p2", ChapterStatus.MASTERED, day, 3),
+        )
+
+        val reviews = Planner.upcomingReviews(chapters, progress)
+
+        assertEquals(listOf("p1"), reviews.map { it.chapterId })
+        assertEquals(day.plusDays(3), reviews.single().dueDate)
     }
 }

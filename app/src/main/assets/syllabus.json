@@ -1,200 +1,351 @@
 {
-  "version": 1,
-  "exam": "JEE Main + Advanced",
+  "version": 2,
+  "exam": "JEE Main Paper 1 (B.E./B.Tech)",
+  "verifiedOn": "2026-11-23",
+  "source": "NTA JEE (Main) 2027 syllabus, 54 units, unchanged from 2026",
   "subjects": [
     {
       "id": "physics",
       "name": "Physics",
-      "tint": "#3B6FE0",
+      "tint": "#4C8DFF",
       "units": [
         {
-          "id": "phy-mechanics",
-          "name": "Mechanics",
-          "chapters": [
-            "Units & Measurements",
-            "Kinematics",
-            "Laws of Motion",
-            "Work, Energy & Power",
-            "Rotational Motion",
-            "Gravitation",
-            "Properties of Solids",
-            "Fluid Mechanics"
-          ]
+          "id": "phy-01",
+          "name": "Units and Measurements",
+          "priority": "medium",
+          "topics": ["SI units and dimensions", "Dimensional analysis", "Errors and significant figures", "Least count and instruments"]
         },
         {
-          "id": "phy-electrodynamics",
-          "name": "Electrodynamics",
-          "chapters": [
-            "Electrostatics",
-            "Capacitors",
-            "Current Electricity",
-            "Moving Charges & Magnetism",
-            "Magnetism & Matter",
-            "Electromagnetic Induction",
-            "Alternating Current"
-          ]
+          "id": "phy-02",
+          "name": "Kinematics",
+          "priority": "high",
+          "topics": ["Motion in a straight line", "Graphs of motion", "Projectile motion", "Relative velocity"]
         },
         {
-          "id": "phy-optics",
+          "id": "phy-03",
+          "name": "Laws of Motion",
+          "priority": "high",
+          "topics": ["Newton's three laws", "Friction", "Dynamics of circular motion", "Constraint motion", "Pseudo forces"]
+        },
+        {
+          "id": "phy-04",
+          "name": "Work, Energy and Power",
+          "priority": "high",
+          "topics": ["Work-energy theorem", "Conservative forces and potential energy", "Power", "Collisions"]
+        },
+        {
+          "id": "phy-05",
+          "name": "Rotational Motion",
+          "priority": "high",
+          "topics": ["Moment of inertia", "Torque and angular momentum", "Rolling motion", "Rotational equilibrium"]
+        },
+        {
+          "id": "phy-06",
+          "name": "Gravitation",
+          "priority": "medium",
+          "topics": ["Newton's law of gravitation", "Field and potential", "Satellites and escape velocity", "Kepler's laws"]
+        },
+        {
+          "id": "phy-07",
+          "name": "Properties of Solids and Liquids",
+          "priority": "medium",
+          "topics": ["Elasticity", "Surface tension", "Viscosity", "Bernoulli's theorem and fluid flow", "Capillarity"]
+        },
+        {
+          "id": "phy-08",
+          "name": "Thermodynamics",
+          "priority": "high",
+          "topics": ["Zeroth and first law", "Thermodynamic processes", "Second law and entropy", "Heat engines and refrigerators"]
+        },
+        {
+          "id": "phy-09",
+          "name": "Kinetic Theory of Gases",
+          "priority": "medium",
+          "topics": ["Ideal gas equation", "Degrees of freedom and specific heats", "Mean free path", "Gas laws"]
+        },
+        {
+          "id": "phy-10",
+          "name": "Oscillations and Waves",
+          "priority": "high",
+          "topics": ["Simple harmonic motion", "Energy in SHM", "Superposition and beats", "Standing waves", "Resonance"]
+        },
+        {
+          "id": "phy-11",
+          "name": "Electrostatics",
+          "priority": "high",
+          "topics": ["Coulomb's law and electric field", "Gauss's law", "Potential and capacitance", "Dielectrics", "Energy stored in capacitors"]
+        },
+        {
+          "id": "phy-12",
+          "name": "Current Electricity",
+          "priority": "high",
+          "topics": ["Ohm's law and resistivity", "Kirchhoff's laws", "Wheatstone bridge and potentiometer", "Cells and EMF", "RC circuits"]
+        },
+        {
+          "id": "phy-13",
+          "name": "Magnetic Effects of Current and Magnetism",
+          "priority": "high",
+          "topics": ["Biot-Savart law", "Ampere's law", "Force on charge and conductor", "Moving coil galvanometer", "Earth's magnetism"]
+        },
+        {
+          "id": "phy-14",
+          "name": "Electromagnetic Induction and Alternating Currents",
+          "priority": "high",
+          "topics": ["Faraday and Lenz laws", "Self and mutual inductance", "AC circuits and resonance", "Transformers", "Power factor"]
+        },
+        {
+          "id": "phy-15",
+          "name": "Electromagnetic Waves",
+          "priority": "low",
+          "topics": ["Displacement current", "EM spectrum", "Properties of EM waves", "Intensity and radiation"]
+        },
+        {
+          "id": "phy-16",
           "name": "Optics",
-          "chapters": [
-            "Ray Optics",
-            "Wave Optics",
-            "Polarisation",
-            "Optical Instruments",
-            "Electromagnetic Waves"
-          ]
+          "priority": "high",
+          "topics": ["Reflection and refraction", "Lenses and mirrors", "Interference", "Diffraction", "Polarisation", "Optical instruments"]
         },
         {
-          "id": "phy-heat",
-          "name": "Heat & Thermodynamics",
-          "chapters": [
-            "Thermal Properties of Matter",
-            "Kinetic Theory of Gases",
-            "Thermodynamics",
-            "Calorimetry & Heat Transfer"
-          ]
+          "id": "phy-17",
+          "name": "Dual Nature of Matter and Radiation",
+          "priority": "medium",
+          "topics": ["Photoelectric effect", "de Broglie wavelength", "Photon energy and work function", "Matter waves"]
         },
         {
-          "id": "phy-waves",
-          "name": "Oscillations & Waves",
-          "chapters": [
-            "Simple Harmonic Motion",
-            "Mechanical Waves",
-            "Sound & Doppler Effect"
-          ]
+          "id": "phy-18",
+          "name": "Atoms and Nuclei",
+          "priority": "medium",
+          "topics": ["Bohr model and spectra", "Radioactivity and decay laws", "Nuclear reactions and binding energy", "Fission and fusion"]
         },
         {
-          "id": "phy-modern",
-          "name": "Modern Physics",
-          "chapters": [
-            "Dual Nature of Radiation",
-            "Atoms",
-            "Nuclei"
-          ]
+          "id": "phy-19",
+          "name": "Electronic Devices",
+          "priority": "medium",
+          "topics": ["Semiconductors and doping", "p-n junction and diode", "Rectifiers", "Zener and special diodes", "Transistor basics", "Logic gates"]
+        },
+        {
+          "id": "phy-20",
+          "name": "Experimental Skills",
+          "priority": "low",
+          "topics": ["Vernier and screw gauge", "Simple pendulum", "Meter bridge and potentiometer", "Lens and mirror experiments", "Resonance tube", "Ohm's law verification"]
         }
       ]
     },
     {
       "id": "chemistry",
       "name": "Chemistry",
-      "tint": "#12A87A",
+      "tint": "#22C08A",
       "units": [
         {
-          "id": "chem-physical",
-          "name": "Physical Chemistry",
-          "chapters": [
-            "Mole Concept & Stoichiometry",
-            "Atomic Structure",
-            "Chemical Bonding",
-            "States of Matter",
-            "Thermodynamics",
-            "Chemical Equilibrium",
-            "Ionic Equilibrium",
-            "Redox & Electrochemistry",
-            "Chemical Kinetics",
-            "Solutions & Colligative Properties"
-          ]
+          "id": "chem-01",
+          "name": "Some Basic Concepts in Chemistry",
+          "priority": "high",
+          "topics": ["Mole concept", "Stoichiometry", "Empirical and molecular formula", "Concentration terms", "Significant figures"]
         },
         {
-          "id": "chem-inorganic",
-          "name": "Inorganic Chemistry",
-          "chapters": [
-            "Periodic Table & Periodicity",
-            "Hydrogen & s-Block",
-            "p-Block Elements",
-            "d & f-Block Elements",
-            "Coordination Compounds",
-            "Metallurgy",
-            "Qualitative Analysis",
-            "Environmental Chemistry"
-          ]
+          "id": "chem-02",
+          "name": "Atomic Structure",
+          "priority": "high",
+          "topics": ["Bohr model and spectra", "Quantum numbers and orbitals", "Electronic configuration", "Photoelectric effect and de Broglie", "Heisenberg uncertainty principle"]
         },
         {
-          "id": "chem-organic",
-          "name": "Organic Chemistry",
-          "chapters": [
-            "General Organic Chemistry",
-            "Isomerism & Stereochemistry",
-            "Hydrocarbons",
-            "Haloalkanes & Haloarenes",
-            "Alcohols, Phenols & Ethers",
-            "Aldehydes, Ketones & Acids",
-            "Amines",
-            "Biomolecules",
-            "Polymers",
-            "Named Reactions & Reagents",
-            "Practical Organic Chemistry"
-          ]
+          "id": "chem-03",
+          "name": "Chemical Bonding and Molecular Structure",
+          "priority": "high",
+          "topics": ["Ionic and covalent bonds", "VSEPR and geometry", "Hybridisation", "Molecular orbital theory", "Hydrogen bonding", "Dipole moment"]
+        },
+        {
+          "id": "chem-04",
+          "name": "Chemical Thermodynamics",
+          "priority": "high",
+          "topics": ["First law and internal energy", "Enthalpy and Hess's law", "Entropy and spontaneity", "Gibbs free energy", "Thermochemistry"]
+        },
+        {
+          "id": "chem-05",
+          "name": "Solutions",
+          "priority": "medium",
+          "topics": ["Concentration units", "Raoult's law", "Colligative properties", "Ideal and non-ideal solutions", "Azeotropes"]
+        },
+        {
+          "id": "chem-06",
+          "name": "Equilibrium",
+          "priority": "high",
+          "topics": ["Law of mass action", "Kc and Kp", "Le Chatelier's principle", "Ionic equilibrium and pH", "Buffers", "Solubility product", "Salt hydrolysis"]
+        },
+        {
+          "id": "chem-07",
+          "name": "Redox Reactions and Electrochemistry",
+          "priority": "high",
+          "topics": ["Oxidation numbers", "Balancing redox reactions", "Galvanic cells and EMF", "Nernst equation", "Conductance", "Electrolysis and Faraday's laws", "Batteries and corrosion"]
+        },
+        {
+          "id": "chem-08",
+          "name": "Chemical Kinetics",
+          "priority": "high",
+          "topics": ["Rate law and order", "Integrated rate equations", "Half-life", "Arrhenius and activation energy", "Collision theory", "Catalysis"]
+        },
+        {
+          "id": "chem-09",
+          "name": "Classification of Elements and Periodicity",
+          "priority": "medium",
+          "topics": ["Periodic trends", "Atomic and ionic radii", "Ionisation enthalpy", "Electron gain enthalpy", "Electronegativity", "Anomalies"]
+        },
+        {
+          "id": "chem-10",
+          "name": "p-Block Elements",
+          "priority": "high",
+          "topics": ["Group 13 and 14", "Group 15", "Group 16", "Group 17", "Group 18", "Important compounds and trends"]
+        },
+        {
+          "id": "chem-11",
+          "name": "d- and f-Block Elements",
+          "priority": "medium",
+          "topics": ["Transition element trends", "KMnO4 and K2Cr2O7", "Lanthanoids", "Actinoids", "Interstitial compounds"]
+        },
+        {
+          "id": "chem-12",
+          "name": "Coordination Compounds",
+          "priority": "high",
+          "topics": ["Nomenclature", "Werner theory and VBT", "Crystal field theory", "Isomerism", "Stability and applications"]
+        },
+        {
+          "id": "chem-13",
+          "name": "Purification and Characterisation",
+          "priority": "low",
+          "topics": ["Qualitative analysis", "Crystallisation and distillation", "Chromatography", "UV, IR and NMR basics"]
+        },
+        {
+          "id": "chem-14",
+          "name": "Some Basic Principles of Organic Chemistry",
+          "priority": "high",
+          "topics": ["IUPAC nomenclature", "Isomerism", "Inductive and resonance effects", "Hyperconjugation", "Reaction intermediates", "Carbocation stability"]
+        },
+        {
+          "id": "chem-15",
+          "name": "Hydrocarbons",
+          "priority": "high",
+          "topics": ["Alkanes and halogenation", "Alkenes and electrophilic addition", "Markownikoff rule", "Alkynes", "Aromaticity", "Benzene reactions"]
+        },
+        {
+          "id": "chem-16",
+          "name": "Organic Compounds Containing Halogens",
+          "priority": "medium",
+          "topics": ["Haloalkanes and SN1/SN2", "Haloarenes", "Grignard reagents", "Polyhalogen compounds"]
+        },
+        {
+          "id": "chem-17",
+          "name": "Organic Compounds Containing Oxygen",
+          "priority": "high",
+          "topics": ["Alcohols and phenols", "Ethers", "Aldehydes and ketones", "Carboxylic acids", "Esterification", "Named reactions"]
+        },
+        {
+          "id": "chem-18",
+          "name": "Organic Compounds Containing Nitrogen",
+          "priority": "medium",
+          "topics": ["Amines and basicity", "Diazonium salts", "Amides", "Cyanides and isocyanides", "Hofmann and Gabriel synthesis"]
+        },
+        {
+          "id": "chem-19",
+          "name": "Biomolecules",
+          "priority": "low",
+          "topics": ["Carbohydrates", "Proteins and enzymes", "Vitamins", "Nucleic acids", "Hormones"]
+        },
+        {
+          "id": "chem-20",
+          "name": "Principles Related to Practical Chemistry",
+          "priority": "low",
+          "topics": ["Salt analysis", "Functional group detection", "Kinetics experiment", "pH and titration", "Preparations of compounds"]
         }
       ]
     },
     {
       "id": "maths",
       "name": "Maths",
-      "tint": "#E2A93B",
+      "tint": "#F0B429",
       "units": [
         {
-          "id": "math-algebra",
-          "name": "Algebra",
-          "chapters": [
-            "Quadratic Equations",
-            "Complex Numbers",
-            "Sequences & Series",
-            "Permutations & Combinations",
-            "Binomial Theorem",
-            "Matrices & Determinants"
-          ]
+          "id": "math-01",
+          "name": "Sets, Relations and Functions",
+          "priority": "high",
+          "topics": ["Sets and operations", "Relations and their types", "Functions, domain and range", "Composition and inverse", "Graphs"]
         },
         {
-          "id": "math-trigonometry",
+          "id": "math-02",
+          "name": "Complex Numbers and Quadratic Equations",
+          "priority": "high",
+          "topics": ["Algebra of complex numbers", "Modulus and argument", "De Moivre and roots of unity", "Quadratic roots and nature", "Location of roots"]
+        },
+        {
+          "id": "math-03",
+          "name": "Matrices and Determinants",
+          "priority": "high",
+          "topics": ["Matrix algebra", "Transpose and inverse", "Determinants and properties", "System of equations", "Rank and consistency"]
+        },
+        {
+          "id": "math-04",
+          "name": "Permutations and Combinations",
+          "priority": "medium",
+          "topics": ["Fundamental counting", "Permutations", "Combinations", "Circular and restricted arrangements", "Distribution problems"]
+        },
+        {
+          "id": "math-05",
+          "name": "Binomial Theorem",
+          "priority": "medium",
+          "topics": ["General term and coefficients", "Middle term", "Greatest coefficient", "Applications of expansion"]
+        },
+        {
+          "id": "math-06",
+          "name": "Sequences and Series",
+          "priority": "high",
+          "topics": ["AP and GP", "HP and means", "Sum of special series", "AM-GM-HM inequalities", "Recurrence relations"]
+        },
+        {
+          "id": "math-07",
+          "name": "Limit, Continuity and Differentiability",
+          "priority": "high",
+          "topics": ["Limits and standard forms", "Continuity", "Differentiability", "Rolle's and LMVT", "Series expansions"]
+        },
+        {
+          "id": "math-08",
+          "name": "Integral Calculus",
+          "priority": "high",
+          "topics": ["Indefinite integrals and substitution", "Integration by parts and partial fractions", "Definite integrals and properties", "Areas under curves", "Reduction formulae"]
+        },
+        {
+          "id": "math-09",
+          "name": "Differential Equations",
+          "priority": "medium",
+          "topics": ["Order and degree", "Variable separable", "Homogeneous equations", "Linear equations and integrating factor", "Applications"]
+        },
+        {
+          "id": "math-10",
+          "name": "Co-ordinate Geometry",
+          "priority": "high",
+          "topics": ["Straight lines", "Circles", "Parabola", "Ellipse", "Hyperbola", "Pair of straight lines"]
+        },
+        {
+          "id": "math-11",
+          "name": "Three Dimensional Geometry",
+          "priority": "medium",
+          "topics": ["Direction cosines and ratios", "Lines in space", "Planes", "Shortest distance", "Angle between line and plane"]
+        },
+        {
+          "id": "math-12",
+          "name": "Vector Algebra",
+          "priority": "medium",
+          "topics": ["Vector operations", "Dot and cross product", "Scalar triple product", "Vector equations", "Geometric applications"]
+        },
+        {
+          "id": "math-13",
+          "name": "Statistics and Probability",
+          "priority": "high",
+          "topics": ["Mean, median, mode and variance", "Probability basics", "Conditional probability and Bayes", "Binomial distribution", "Random variables"]
+        },
+        {
+          "id": "math-14",
           "name": "Trigonometry",
-          "chapters": [
-            "Trigonometric Ratios & Identities",
-            "Trigonometric Equations",
-            "Inverse Trigonometric Functions"
-          ]
-        },
-        {
-          "id": "math-calculus",
-          "name": "Calculus",
-          "chapters": [
-            "Functions & Limits",
-            "Continuity & Differentiability",
-            "Differentiation & Applications",
-            "Indefinite Integration",
-            "Definite Integrals & Areas",
-            "Differential Equations"
-          ]
-        },
-        {
-          "id": "math-coordinate",
-          "name": "Coordinate Geometry",
-          "chapters": [
-            "Straight Lines",
-            "Circles",
-            "Parabola",
-            "Ellipse",
-            "Hyperbola"
-          ]
-        },
-        {
-          "id": "math-vectors",
-          "name": "Vectors & 3D Geometry",
-          "chapters": [
-            "Vector Algebra",
-            "Three Dimensional Geometry",
-            "Lines & Planes"
-          ]
-        },
-        {
-          "id": "math-probability",
-          "name": "Probability & Statistics",
-          "chapters": [
-            "Probability",
-            "Bayes' Theorem & Distributions",
-            "Statistics & Data Handling"
-          ]
+          "priority": "high",
+          "topics": ["Ratios and identities", "Trigonometric equations", "Inverse functions", "Heights and distances", "Properties of triangles"]
         }
       ]
     }

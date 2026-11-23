@@ -1,15 +1,8 @@
 package app.jeegem.domain
 
+import app.jeegem.data.Chapter
+import app.jeegem.data.ChapterStatus
 import java.time.LocalDate
-
-enum class ChapterStatus { NOT_STARTED, LEARNING, REVISED, MASTERED }
-
-data class Chapter(
-    val id: String,
-    val subjectId: String,
-    val unitId: String,
-    val name: String,
-)
 
 data class ChapterProgress(
     val chapterId: String,
@@ -77,16 +70,34 @@ object Planner {
 
         chapters.asSequence()
             .filter { progress[it.id]?.status == ChapterStatus.LEARNING }
-            .sortedBy { it.name }
+            .sortedWith(compareBy({ priorityRank(it.priority) }, { it.name }))
             .forEach { add(it.id, TargetReason.CONTINUE, CONTINUE_MINUTES) }
 
         val weakestFirst = subjectOrder(chapters, progress)
         chapters.asSequence()
-            .filter { chapter -> statusOf(chapter, progress) == ChapterStatus.NOT_STARTED }
-            .sortedWith(compareBy({ weakestFirst.indexOf(it.subjectId) }, { it.name }))
+            .filter { statusOf(it, progress) == ChapterStatus.NOT_STARTED }
+            .sortedWith(
+                compareBy(
+                    { weakestFirst.indexOf(it.subjectId) },
+                    { priorityRank(it.priority) },
+                    { it.name },
+                ),
+            )
             .forEach { add(it.id, TargetReason.NEW, NEW_MINUTES) }
 
         return targets
+    }
+
+    /** Reviews that are scheduled for every started chapter, based on its stored ladder stage. */
+    fun upcomingReviews(
+        chapters: List<Chapter>,
+        progress: Map<String, ChapterProgress>,
+    ): List<ReviewItem> = chapters.mapNotNull { chapter ->
+        val state = progress[chapter.id] ?: return@mapNotNull null
+        val studied = state.lastStudied ?: return@mapNotNull null
+        if (state.status == ChapterStatus.MASTERED) return@mapNotNull null
+        val gap = ReviewSchedule.gapsDays.getOrNull(state.revisionStage) ?: return@mapNotNull null
+        ReviewItem(chapter.id, studied.plusDays(gap), state.revisionStage)
     }
 
     fun statusOf(chapter: Chapter, progress: Map<String, ChapterProgress>): ChapterStatus =
@@ -115,5 +126,25 @@ object Planner {
         return totals.mapValues { (subjectId, total) ->
             (started[subjectId] ?: 0).toFloat() / total.toFloat()
         }
+    }
+
+    fun subjectMastery(
+        chapters: List<Chapter>,
+        progress: Map<String, ChapterProgress>,
+    ): Map<String, Float> {
+        val totals = chapters.groupingBy { it.subjectId }.eachCount()
+        val mastered = chapters
+            .filter { statusOf(it, progress) == ChapterStatus.MASTERED }
+            .groupingBy { it.subjectId }
+            .eachCount()
+        return totals.mapValues { (subjectId, total) ->
+            (mastered[subjectId] ?: 0).toFloat() / total.toFloat()
+        }
+    }
+
+    private fun priorityRank(priority: String): Int = when (priority) {
+        "high" -> 0
+        "medium" -> 1
+        else -> 2
     }
 }

@@ -36,6 +36,9 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.JEE_GEM_KEYSTORE_BASE64 }}
         run: echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/jee-gem-signing.jks"
 
+      - name: Run unit tests
+        run: gradle :app:testDebugUnitTest --stacktrace
+
       - name: Build debug APK
         env:
           JEE_GEM_KEYSTORE: ${{ runner.temp }}/jee-gem-signing.jks
