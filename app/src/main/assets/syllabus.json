@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "exam": "JEE Main + Advanced",
+  "subjects": [
+    {
+      "id": "physics",
+      "name": "Physics",
+      "tint": "#3B6FE0",
+      "units": [
+        {
+          "id": "phy-mechanics",
+          "name": "Mechanics",
+          "chapters": [
+            "Units & Measurements",
+            "Kinematics",
+            "Laws of Motion",
+            "Work, Energy & Power",
+            "Rotational Motion",
+            "Gravitation",
+            "Properties of Solids",
+            "Fluid Mechanics"
+          ]
+        },
+        {
+          "id": "phy-electrodynamics",
+          "name": "Electrodynamics",
+          "chapters": [
+            "Electrostatics",
+            "Capacitors",
+            "Current Electricity",
+            "Moving Charges & Magnetism",
+            "Magnetism & Matter",
+            "Electromagnetic Induction",
+            "Alternating Current"
+          ]
+        },
+        {
+          "id": "phy-optics",
+          "name": "Optics",
+          "chapters": [
+            "Ray Optics",
+            "Wave Optics",
+            "Polarisation",
+            "Optical Instruments",
+            "Electromagnetic Waves"
+          ]
+        },
+        {
+          "id": "phy-heat",
+          "name": "Heat & Thermodynamics",
+          "chapters": [
+            "Thermal Properties of Matter",
+            "Kinetic Theory of Gases",
+            "Thermodynamics",
+            "Calorimetry & Heat Transfer"
+          ]
+        },
+        {
+          "id": "phy-waves",
+          "name": "Oscillations & Waves",
+          "chapters": [
+            "Simple Harmonic Motion",
+            "Mechanical Waves",
+            "Sound & Doppler Effect"
+          ]
+        },
+        {
+          "id": "phy-modern",
+          "name": "Modern Physics",
+          "chapters": [
+            "Dual Nature of Radiation",
+            "Atoms",
+            "Nuclei"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "tint": "#12A87A",
+      "units": [
+        {
+          "id": "chem-physical",
+          "name": "Physical Chemistry",
+          "chapters": [
+            "Mole Concept & Stoichiometry",
+            "Atomic Structure",
+            "Chemical Bonding",
+            "States of Matter",
+            "Thermodynamics",
+            "Chemical Equilibrium",
+            "Ionic Equilibrium",
+            "Redox & Electrochemistry",
+            "Chemical Kinetics",
+            "Solutions & Colligative Properties"
+          ]
+        },
+        {
+          "id": "chem-inorganic",
+          "name": "Inorganic Chemistry",
+          "chapters": [
+            "Periodic Table & Periodicity",
+            "Hydrogen & s-Block",
+            "p-Block Elements",
+            "d & f-Block Elements",
+            "Coordination Compounds",
+            "Metallurgy",
+            "Qualitative Analysis",
+            "Environmental Chemistry"
+          ]
+        },
+        {
+          "id": "chem-organic",
+          "name": "Organic Chemistry",
+          "chapters": [
+            "General Organic Chemistry",
+            "Isomerism & Stereochemistry",
+            "Hydrocarbons",
+            "Haloalkanes & Haloarenes",
+            "Alcohols, Phenols & Ethers",
+            "Aldehydes, Ketones & Acids",
+            "Amines",
+            "Biomolecules",
+            "Polymers",
+            "Named Reactions & Reagents",
+            "Practical Organic Chemistry"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maths",
+      "name": "Maths",
+      "tint": "#E2A93B",
+      "units": [
+        {
+          "id": "math-algebra",
+          "name": "Algebra",
+          "chapters": [
+            "Quadratic Equations",
+            "Complex Numbers",
+            "Sequences & Series",
+            "Permutations & Combinations",
+            "Binomial Theorem",
+            "Matrices & Determinants"
+          ]
+        },
+        {
+          "id": "math-trigonometry",
+          "name": "Trigonometry",
+          "chapters": [
+            "Trigonometric Ratios & Identities",
+            "Trigonometric Equations",
+            "Inverse Trigonometric Functions"
+          ]
+        },
+        {
+          "id": "math-calculus",
+          "name": "Calculus",
+          "chapters": [
+            "Functions & Limits",
+            "Continuity & Differentiability",
+            "Differentiation & Applications",
+            "Indefinite Integration",
+            "Definite Integrals & Areas",
+            "Differential Equations"
+          ]
+        },
+        {
+          "id": "math-coordinate",
+          "name": "Coordinate Geometry",
+          "chapters": [
+            "Straight Lines",
+            "Circles",
+            "Parabola",
+            "Ellipse",
+            "Hyperbola"
+          ]
+        },
+        {
+          "id": "math-vectors",
+          "name": "Vectors & 3D Geometry",
+          "chapters": [
+            "Vector Algebra",
+            "Three Dimensional Geometry",
+            "Lines & Planes"
+          ]
+        },
+        {
+          "id": "math-probability",
+          "name": "Probability & Statistics",
+          "chapters": [
+            "Probability",
+            "Bayes' Theorem & Distributions",
+            "Statistics & Data Handling"
+          ]
+        }
+      ]
+    }
+  ]
+}
